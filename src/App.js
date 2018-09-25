@@ -9,7 +9,7 @@ class App extends Component {
     sumvalue : 0,
     detail : '',
     sumlevel : '',
-    days :  [[0,0,0,0,0,0,0,0], 
+    days :  [[0,0,0,0,0,0,0,0],
      [0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0],
      [0,0,0,0,0,0,0,0],
@@ -20,8 +20,8 @@ class App extends Component {
   }
 
   convertNumber = (ch) => {
-    if(ch == 'ก' || ch == 'ด' || ch == 'ถ' || ch == 'ท' || ch == 'ภ' 
-    || ch == 'า' || ch == 'ำ' || ch == 'ฤ' || ch == '่' || ch == 'ู'){
+    if(ch == 'ก' || ch == 'ด' || ch == 'ถ' || ch == 'ท' || ch == 'ภ'
+    || ch == 'า' || ch == 'ำ' || ch == 'ฤ' || ch == '่' || ch == 'ุ'){
       return 1
     }else if(ch == 'ข' || ch == 'ช' || ch == 'ง' || ch == 'บ' || ch == 'ป'
     || ch == 'เ' || ch == 'แ' || ch == '้' || ch == 'ู' ){
@@ -39,7 +39,7 @@ class App extends Component {
     }else if(ch == 'ซ' || ch == 'ศ' || ch == 'ส' || ch == 'ี' || ch == 'ื'
     || ch == '๊' ){
       return 7
-    }else if(ch == 'ผ' || ch == 'ฝ' || ch == 'พ' || ch == 'ฟ' || ch == 'ย' 
+    }else if(ch == 'ผ' || ch == 'ฝ' || ch == 'พ' || ch == 'ฟ' || ch == 'ย'
     || ch == '็' ){
       return 8
     }else if(ch == 'ฏ' || ch == 'ฐ' || ch == 'ไ' || ch == '์' ){
@@ -56,7 +56,7 @@ class App extends Component {
       || sum == 50 || sum == 51 || sum == 53 || sum == 55 || sum == 56
       || sum == 59 || sum == 63 || sum == 64 || sum == 65){
         return 2;
-    }else if(sum == 20 || sum == 32 || sum ==40 || sum == 44 || sum == 69 
+    }else if(sum == 20 || sum == 32 || sum ==40 || sum == 44 || sum == 69
       || sum == 79){
       return 1;
     }else if(sum == 27 || sum == 29 || sum == 30){
@@ -68,7 +68,7 @@ class App extends Component {
   calDays = (name) => {
     let days = [[0,0,0,0,0,0,0,0], //sun 0
     [0,0,0,0,0,0,0,0], //mon 1
-   [0,0,0,0,0,0,0,0],//tue 2 
+   [0,0,0,0,0,0,0,0],//tue 2
     [0,0,0,0,0,0,0,0],//wed_day 3
     [0,0,0,0,0,0,0,0],//thu 4
     [0,0,0,0,0,0,0,0],//fri 5
@@ -76,7 +76,7 @@ class App extends Component {
     [0,0,0,0,0,0,0,0]];//wed_night 7
     for(let i = 0 ; i < name.length ; i++){
       const ch = name.charAt(i);
-      if(ch == 'อ' || ch == 'ะ' || ch == 'า' || ch == 'ิ' || ch == 'ี' 
+      if(ch == 'อ' || ch == 'ะ' || ch == 'า' || ch == 'ิ' || ch == 'ี'
       || ch == 'ุ' || ch == 'ู' || ch == 'เ' || ch == 'โ'){
         days[0][0] += 1;
         days[1][7] += 1;
@@ -154,7 +154,7 @@ class App extends Component {
     return days;
   }
 
- 
+
 
   handleChange = (event) => {
     let val = event.target.value;
@@ -234,9 +234,9 @@ class App extends Component {
           <td className={arr[7]? 'text-danger': ''}>{arr[7]}</td>
           </tr>);
      });
-     
+
  //   }
-    
+
   }
 
   render() {
@@ -262,15 +262,15 @@ class App extends Component {
         <h2>
         <input type="text" name="title" style={{'fontSize':'25px'}} value={this.state.title} onChange={this.handleChange}/>
         </h2>
-       
-        
+
+
         <h2>
           { this.state.detail}
           </h2>
         <h2>
           ผลรวม = { this.state.sumvalue}
           </h2>
-          <h2>  
+          <h2>
           { this.showSumLevel()}
           </h2>
           <div className="row">
