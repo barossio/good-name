@@ -84,7 +84,7 @@ class App extends Component {
         days[3][5] += 1;
         days[4][3] += 1;
         days[5][1] += 1;
-        days[6][5] += 1;
+        days[6][4] += 1;
         days[7][2] += 1;
       }else  if(ch == 'ก' || ch == 'ข' || ch == 'ค' || ch == 'ฆ' || ch == 'ง' ){
         days[0][1] += 1;
